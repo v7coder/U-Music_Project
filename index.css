@@ -1,0 +1,603 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #121212;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 196px;
+  background-color: #000000;
+  padding: 24px;
+  transition: all ease 0.6s;
+}
+.sidebar .logo{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.sidebar .logo img {
+  width: 50px;
+}
+.sidebar .logo h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-bottom: 1px solid seagreen;
+}
+.sidebar .navigation ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.sidebar .navigation ul li {
+  padding: 10px 20px;
+}
+.sidebar .navigation ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+.sidebar .navigation ul li a:hover,
+.sidebar .navigation ul li a:active,
+.sidebar .navigation ul li a:focus {
+  color: #ffffff;
+}
+.sidebar .navigation ul li a:hover .fa,
+.sidebar .navigation ul li a:active .fa,
+.sidebar .navigation ul li a:focus .fa {
+  color: #b3b3b3;
+}
+.sidebar .navigation ul li .fa {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.sidebar .navigation ul li a:hover .fa:hover,
+.sidebar .navigation ul li a:hover .fa:active,
+.sidebar .navigation ul li a:hover .fa:focus {
+  color: #ffffff;
+}
+.sidebar .policies {
+  position: absolute;
+  bottom: 100px;
+}
+.sidebar .policies ul {
+  list-style: none;
+}
+.sidebar .policies ul li {
+  padding-bottom: 5px;
+}
+.sidebar .policies ul li a {
+  color: #b3b3b3;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 10px;
+}
+.sidebar .policies ul li a:hover,
+.sidebar .policies ul li a:active,
+.sidebar .policies ul li a:focus {
+  text-decoration: underline;
+}
+
+.main-container {
+  margin-left: 245px;
+  margin-bottom: 100px;
+  transition: all ease 0.4s;
+}
+
+.topbar {
+  width: auto;
+  position: fixed;
+  right: 0;
+  left: 245px;
+  justify-items: space-between;
+  display: flex;
+  justify-content: space-between;
+  background-color: #101010;
+  padding: 12px 30px;
+  border-bottom: 1px solid aliceblue;
+  z-index: 100;
+  transition: all ease 0.4s;
+}
+.topbar .prev-next-buttons button {
+  color: #7a7a7a;
+  cursor: not-allowed;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  font-size: 18px;
+  border: 0px;
+  background-color: #090909;
+  margin-right: 10px;
+}
+.prev-next-buttons h4{
+  margin-top: 10px;
+  color: #fff;
+}
+.topbar .navbar {
+  display: flex;
+  align-items: center;
+}
+.topbar .navbar ul {
+  list-style: none;
+}
+.topbar .navbar ul li {
+  display: inline-block;
+  margin: 0px 8px;
+  width: 70px;
+  transition: all ease 0.4s;
+}
+.topbar .navbar ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+}
+.topbar .navbar ul li a:hover,
+.topbar .navbar ul li a:active,
+.topbar .navbar ul li a:focus {
+  color: #ffffff;
+  font-size: 15px;
+}
+.topbar .navbar ul li.divider {
+  color: #ffffff;
+  font-size: 26px;
+  margin: 0px 20px;
+  width: auto;
+}
+.topbar .navbar button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 20px;
+  border: 0px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.topbar .navbar button:hover,
+.topbar .navbar button:active,
+.topbar .navbar button:focus {
+  background-color: seagreen;
+  color: #fff;
+}
+.spotify-playlists {
+  padding: 20px 40px;
+}
+.spotify-playlists h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.spotify-playlists .list {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+.spotify-playlists .list .item {
+  min-width: 140px;
+  width: 160px;
+  padding: 15px;
+  background-color: #181818;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+@media (max-width: 550px)
+{
+    .spotify-playlists .list .item {
+    min-width: 115px;
+    width: 140px;
+    padding: 10px;
+  }
+}
+.spotify-playlists .list .item:hover {
+  background-color: #252525;
+}
+.spotify-playlists .list .item img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.spotify-playlists .list .item .play {
+  position: relative;
+}
+.spotify-playlists .list {
+  display: flex;
+  overflow-x: scroll;
+  }
+  ::-webkit-scrollbar{
+  display: none; 
+  }
+.spotify-playlists .list .item .play .fa {
+  position: absolute;
+  right: 10px;
+  top: -60px;
+  padding: 18px;
+  background-color: #1db954;
+  border-radius: 100%;
+  opacity: 0;
+  transition: all ease 0.4s;
+}
+.spotify-playlists .list .item:hover .play .fa {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+.spotify-playlists .list .item h4 {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spotify-playlists .list .item p {
+  color: #989898;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.spotify-playlists hr {
+  margin: 70px 0px 0px;
+  border-color: #636363;
+}
+
+.preview {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000015;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+.preview h6 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.preview p {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.preview button {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 30px;
+  border: 0px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+#hamer{
+  position: absolute;
+  left: auto;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+
+/* --------------------------- */
+@media screen and (max-width: 930px)
+{
+  .sidebar {
+    width: 130px;
+  }
+  .sidebar .logo img{
+    width: 38px;
+  }
+  #hamer{
+  position: absolute;
+  left: auto;
+  right: 20px;
+  width: 40px;
+  height: 35px;
+  display: block;
+}
+
+  #divide{
+    display: none;
+  }
+  .navbar{
+    height: 190px;
+    width: auto;
+    margin: -190px 0 0 0;
+  }
+  .navbar ul {
+  margin-top: 5px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all ease 0.4s;
+  }
+  .navbar ul li {
+    padding: 10px 0;
+    transition: all ease 0.4s;
+  }
+  .navbar button{
+    position: absolute;
+    top: 180px;
+    right: 30px;
+    display: none;
+  }
+  .sidebar .logo h2 {
+    font-size: 1.4rem;
+  }
+  .topbar {
+    left: 180px;
+    height: auto;
+  }
+  .main-container {
+  margin-left: 180px;
+}
+
+}
+
+/* --------------------------- */
+@media screen and (max-width: 640px)
+{
+  .sidebar {
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;    
+  }
+  .sidebar .logo{
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar .logo h2 {
+    font-size: 1rem;
+  }
+  .topbar {
+    left: 80px;
+    height: auto;
+  }
+  .main-container {
+  margin-left: 60px;
+}
+
+#H{
+  display: none;
+}
+}
+
+/*--------------------footer  css --------------------------------------------*/
+
+
+footer{
+
+   margin-right: 0;
+   margin-left: auto;
+   margin-top: -40px;
+   z-index: 10;
+}
+section {
+  width: auto;
+  display: inline-block;
+  background: #000;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+  background: #000;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 82%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 10px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 25%;
+  margin-left: 100px;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  font-weight:400;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 30%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  font-weight:400;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+  .footer-distributed .footer-left{
+  
+  margin-left: 0px;
+}
+
+}
+/*--------------------umusic-corousel-images-------------*/
+
+/*------------------search bar--------------------------*/
+
+
+.navigation input{
+  padding: 4px 15px;
+  margin-top: 5px;
+  border-radius: 10px;
+  display: none;
+}
+.navigation input::placeholder{
+  color: green;
+}
